@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #b3e6ff;
+    font-family: 'Fredoka One', cursive;
+    color: #1a1a1a;
+}
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.cell {
+    width: 100%;
+    height: 120px;
+    background-color: #09063f;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    color: #fff8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    transition: background-color 0.3s;
+    box-shadow: 3px 3px 3px 3px black;
+}
+.cell:hover {
+    background-color: #5d8792;
+}
+.stats {
+    display: flex;
+    justify-content: space-between;
+    max-width: 400px;
+    margin: 20px auto;
+}
+.player, .draws {
+    text-align: center;
+}
+label {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #1a1a1a;
+}
+.score {
+    font-size: 2em;
+    color: #ffa000;
+}
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(3, 0, 61, 0.8);
+    display: none;
+    z-index: 999;
+}
+
+#message {
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#close {
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 1.5em;
+    color: #aaa;
+}
+
+#message h2 {
+    font-size: 2em;
+    color: #16364a;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #570b0d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5b9ef0;
+}
+
+h1{
+    color : #09063f;
+}
+#gender-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+  }
+  
+  #gender-message {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  #gender-message h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  #gender-message button {
+    background-color: #6a0dad;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  #gender-message button:hover {
+    background-color: #4b0082;
+  }
+
+.girl-design {
+
+    background-color: #ffe6f2;
+    color: #e60073;
+    font-family: 'Fredoka One', cursive;
+  }
+  
+  .girl-design .cell {
+    background-color: #ffc0cb;
+    color: #e60073;
+    box-shadow: 3px 3px 3px 3px rgb(234, 148, 148);
+  }
+  
+  .girl-design .cell:hover {
+    background-color: #ff99ac;
+   
+  }
+  
+  .girl-design .reset {
+    border-color: #e60073;
+  }
+  
+ 
+  .girl-design #message {
+    background-color: #ffe6f2;
+    color: #e60073;
+    box-shadow: 0 2px 6px rgba(230, 0, 115, 0.3);
+  }
+  .girl-design .R{
+     font-size: 3em;
+  text-align: center;
+  margin-bottom: 20px;
+  color :#820027
+  }
+  .girl-design .RP{
+   display: none;
+ }
+  .boy-design .RP{
+    font-size: 3em;
+ text-align: center;
+ margin-bottom: 20px;
+ color :#09063f;
+ }
+ .boy-design .R{
+    display: none;
+ }
+ 
+
+.boy-design {
+  background-color: #b3e6ff;
+  color: #1a1a1a;
+}
+.girl-design #overlay,
+.boy-design #overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+.reset:hover::before,
+.reset:hover::after {
+  content: '';
+  position: absolute;
+  border: 2px dotted #000;
+  border-radius: 50%;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+}
+.reset {
+    cursor: pointer;
+    position: relative; /* Add position relative to create a reference for absolute positioning */
+    width: 70px;
+    height: 70px;
+    border: 2px solid #000;
+    border-radius: 50%;
+  }
+  
+  .reset .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .reset::after {
+    top: -4px;
+    left: -4px;
+  }
+  
+  
